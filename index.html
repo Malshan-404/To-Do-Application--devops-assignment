@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App - All</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-filter="all">
+
+<div class="container">
+    <h1>Todo List</h1>
+
+    <div class="input-box">
+        <input type="text" id="taskInput" placeholder="Enter task">
+        <button onclick="addTask()">Add</button>
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">All</a>
+        <a href="active.html">Active</a>
+        <a href="completed.html">Completed</a>
+    </nav>
+
+    <ul id="taskList"></ul>
+
+    <p id="counter"></p>
+</div>
+
+<script src="java/app.js"></script>
+</body>
+</html>
