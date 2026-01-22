@@ -117,7 +117,7 @@ Prerequisites
 Installation
 bash
  - Clone the repository
-    git clone https://malshan-404.github.io/To-Do-Application--devops-assignment/
+    git clone https://github.com/Malshan-404/To-Do-Application--devops-assignment.git
 
  -Navigate to project directory
       cd your-repository-name
