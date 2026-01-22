@@ -1,9 +1,9 @@
 To-Do Web Application
 
 Group Information
-Student 1 : (K. M. P. Malshan  Aberathna ) - [(ITBIN-2313-0001 )] - Role: DevOps Engineer
-Student 2 : [Full Name as in LMS] - [Student ID] - Role: Frontend Developer
-Student 3 : [K.A.P.T. Iddamalgoda] - [ITBIN-2313-0141] - Role: UI/UX Designer
+Student 1 : (K. M. P. Malshan  Aberathna ) - (ITBIN-2313-0001 ) - Role: DevOps Engineer
+Student 2 : (E.W.K.Kavindu Adithya) - (ITBIN-2313-0006) - Role: Frontend Developer
+Student 3 : (K.A.P.T. Iddamalgoda) - [ITBIN-2313-0141 - Role: UI/UX Designer
 
 
 Project Description
