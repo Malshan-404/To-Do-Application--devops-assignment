@@ -21,7 +21,7 @@ A complete ' CI/CD pipeline '  is implemented using ' GitHub Actions ' , and the
 
 
 Live Deployment
-Live URL  :  https://your-username.github.io/your-repository-name/
+Live URL  :  https://malshan-404.github.io/To-Do-Application--devops-assignment/
 
 
  Technologies Used 
