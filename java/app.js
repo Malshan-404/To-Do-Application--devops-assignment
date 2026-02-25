@@ -1,28 +1,37 @@
+// 1. Initialize tasks with unique IDs for better tracking
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-const filter = document.body.dataset.filter;
+const filter = document.body.dataset.filter || "all";
 
-function saveTasks() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-}
+// Helper to save to LocalStorage
+const saveTasks = () => localStorage.setItem("tasks", JSON.stringify(tasks));
 
 function addTask() {
     const input = document.getElementById("taskInput");
-    if (!input || input.value.trim() === "") return;
+    if (!input?.value.trim()) return;
 
-    tasks.push({ text: input.value, completed: false });
+    // Added a unique ID using Date.now()
+    tasks.push({ 
+        id: Date.now(), 
+        text: input.value.trim(), 
+        completed: false 
+    });
+    
     input.value = "";
     saveTasks();
     renderTasks();
 }
 
-function toggleTask(index) {
-    tasks[index].completed = !tasks[index].completed;
+// Optimized: Find task by ID instead of array index
+function toggleTask(id) {
+    tasks = tasks.map(task => 
+        task.id === id ? { ...task, completed: !task.completed } : task
+    );
     saveTasks();
     renderTasks();
 }
 
-function deleteTask(index) {
-    tasks.splice(index, 1);
+function deleteTask(id) {
+    tasks = tasks.filter(task => task.id !== id);
     saveTasks();
     renderTasks();
 }
@@ -31,30 +40,34 @@ function renderTasks() {
     const list = document.getElementById("taskList");
     if (!list) return;
 
-    list.innerHTML = "";
-
-    let filtered = tasks.filter(task => {
+    // Filter logic
+    const filteredTasks = tasks.filter(task => {
         if (filter === "active") return !task.completed;
         if (filter === "completed") return task.completed;
         return true;
     });
 
-    filtered.forEach(task => {
-        const originalIndex = tasks.indexOf(task);
-        const li = document.createElement("li");
-        if (task.completed) li.classList.add("completed");
+    // Efficiently build the list using map and join
+    list.innerHTML = filteredTasks.map(task => `
+        <li class="${task.completed ? 'completed' : ''}" data-id="${task.id}">
+            <span class="tick-icon" onclick="toggleTask(${task.id})">
+                ${task.completed ? '✅' : '○'}
+            </span>
+            <span class="task-text">${task.text}</span>
+            <button class="delete-btn" onclick="deleteTask(${task.id})">Remove</button>
+        </li>
+    `).join('');
 
-        li.innerHTML = `
-            <span class="tick-icon" onclick="toggleTask(${originalIndex})">&#10003;</span>
-            <span>${task.text}</span>
-            <button onclick="deleteTask(${originalIndex})">X</button>
-        `;
-        list.appendChild(li);
-    });
-
-    const done = tasks.filter(t => t.completed).length;
-    const counter = document.getElementById("counter");
-    if (counter) counter.innerText = `Completed: ${done} / ${tasks.length}`;
+    updateCounter();
 }
 
+function updateCounter() {
+    const counter = document.getElementById("counter");
+    if (!counter) return;
+    
+    const completedCount = tasks.filter(t => t.completed).length;
+    counter.innerText = `Completed: ${completedCount} / ${tasks.length}`;
+}
+
+// Initial render
 renderTasks();

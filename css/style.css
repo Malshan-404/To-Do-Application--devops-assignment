@@ -8,7 +8,8 @@
 }
 
 body {
-    background: #f5f5f5;
+    /* Updated: Soft, modern gradient background */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #333;
     display: flex;
     justify-content: center;
@@ -22,14 +23,14 @@ body {
     max-width: 400px;
     background: #fff;
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px; /* Slightly rounder for a modern look */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+    color: #2d3436;
+    margin-bottom: 25px;
     font-weight: 600;
 }
 
@@ -43,61 +44,63 @@ input[type="text"] {
     flex: 1;
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 2px solid #eee; /* Slightly thicker border */
     font-size: 16px;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
 }
 
 input[type="text"]:focus {
     outline: none;
-    border-color: #4a90e2;
+    border-color: #667eea; /* Matches the new theme */
 }
 
+/* Updated Button Theme: Indigo/Violet */
 button {
     padding: 12px 18px;
     border: none;
-    background: #4a90e2;
+    background: #667eea;
     color: white;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(102, 126, 234, 0.2);
 }
 
 button:hover {
-    background: #357abd;
+    background: #5a6fd6;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
 }
 
 nav {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 25px;
 }
 
 nav a {
-    color: #555;
+    color: #666;
     text-decoration: none;
-    padding: 8px 15px;
+    padding: 8px 16px;
     border-radius: 20px;
     border: 1px solid #ddd;
+    font-size: 14px;
     transition: all 0.3s;
 }
 
+/* Updated: Active Nav Link */
 nav a.active {
-    background: #4a90e2;
+    background: #764ba2;
     color: white;
-    border-color: #4a90e2;
+    border-color: #764ba2;
 }
 
-nav a:hover {
-    background: #eee;
+nav a:hover:not(.active) {
+    background: #f0f0f0;
     border-color: #ccc;
-}
-
-nav a.active:hover {
-    background: #357abd;
-    border-color: #357abd;
 }
 
 ul {
@@ -106,91 +109,83 @@ ul {
 }
 
 li {
-    background: #f9f9f9;
+    background: #fdfdfd;
     padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 8px;
+    margin-bottom: 12px;
+    border-radius: 10px;
     display: flex;
-    align-items: center; /* Align items vertically in the middle */
-    border: 1px solid #eee;
-    transition: background-color 0.3s;
+    align-items: center;
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s;
 }
 
 li:hover {
-    background-color: #f0f0f0;
+    background-color: #f8f9ff;
+    border-color: #e0e6ff;
+    transform: scale(1.02);
 }
 
 .tick-icon {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #cbd5e0;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 12px;
     transition: all 0.3s;
-    color: transparent; /* Hide the checkmark by default */
-    font-size: 14px;
-    font-weight: bold;
+    color: transparent;
+    font-size: 12px;
 }
 
 li.completed .tick-icon {
-    background-color: #28a745; /* Green background when completed */
-    border-color: #28a745;
-    color: white; /* Show the checkmark in white */
+    background-color: #48bb78; /* Vibrant green */
+    border-color: #48bb78;
+    color: white;
 }
 
-li.completed span:not(.tick-icon) { /* Apply line-through to task text, not the icon */
+li.completed span:not(.tick-icon) {
     text-decoration: line-through;
-    color: #aaa;
+    color: #a0aec0;
 }
 
-li span:not(.tick-icon) { /* Adjust styles for the task text */
+li span:not(.tick-icon) {
     flex-grow: 1;
     padding-right: 10px;
-    cursor: default; /* Task text is no longer clickable for toggling */
+    color: #4a5568;
 }
 
+/* Delete Button Styles */
 li button {
-    background: #e74c3c;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px 10px;
+    background: #feb2b2;
+    color: #c53030;
+    border-radius: 6px;
+    padding: 6px 10px;
     font-size: 12px;
-    transition: background-color 0.3s;
+    font-weight: 600;
 }
 
 li button:hover {
-    background: #c0392b;
+    background: #fc8181;
+    color: white;
 }
 
 #counter {
     text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #777;
+    margin-top: 25px;
+    font-size: 13px;
+    color: #a0aec0;
+    letter-spacing: 0.5px;
 }
 
+/* Media Query remains for responsiveness */
 @media (max-width: 480px) {
     .container {
         padding: 20px;
     }
-
     h1 {
         font-size: 24px;
-    }
-
-    input[type="text"], button {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    nav a {
-        padding: 6px 12px;
-        font-size: 14px;
     }
 }
