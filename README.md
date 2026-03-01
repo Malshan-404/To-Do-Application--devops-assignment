@@ -127,3 +127,89 @@ bash
 
  -Run development server (optional)
        npm run dev
+
+
+
+Dockerized To-Do Application
+
+A simple To-Do web application fully containerized using Docker and
+Docker Compose.
+
+This project demonstrates DevOps concepts including: - Dockerfile
+creation - Docker image building - Docker container management - Docker
+Compose configuration - Git version control integration
+
+To-Do-Application
+│
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
+├── README.md
+│
+├── index.html
+├── active.html
+├── css/
+│ └── style.css
+└── java/
+└── app.js
+
+Technologies Used
+
+-   HTML
+-   CSS
+-   JavaScript
+-   Docker
+-   Docker Compose
+-   Git & GitHub
+
+How to Run the Project Using Docker
+
+1.  Clone the Repository
+
+    git clone
+    https://github.com/Malshan-404/To-Do-Application–devops-assignment.git
+    cd To-Do-Application–devops-assignment
+
+2.  Build Docker Image
+
+    docker build -t todo-app .
+
+3.  Run Container
+
+    docker run -p 3000:80 todo-app
+
+Open in browser: http://localhost:3000
+
+Run Using Docker Compose (Recommended)
+
+docker-compose up –build
+
+Access the application at: http://localhost:3000
+
+To stop: docker-compose down
+
+Docker Concepts Demonstrated
+
+-   Port mapping (Host → Container)
+-   Container lifecycle management
+-   .dockerignore optimization
+-   Image building and deployment
+
+Git Workflow Used
+
+-   Local development
+-   Git pull & rebase handling
+-   Merge conflict resolution
+-   Branch synchronization
+
+Purpose of This Project
+
+This project was developed as part of a DevOps assignment to
+demonstrate:
+
+-   Containerization
+-   Environment consistency
+-   Deployment simplification
+-   Version control integration
+
+
