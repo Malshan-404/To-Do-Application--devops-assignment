@@ -140,18 +140,18 @@ creation - Docker image building - Docker container management - Docker
 Compose configuration - Git version control integration
 
 To-Do-Application
-│
-├── Dockerfile
-├── docker-compose.yml
-├── .dockerignore
-├── README.md
-│
-├── index.html
-├── active.html
-├── css/
-│ └── style.css
-└── java/
-└── app.js
+
+Dockerfile
+docker-compose.yml
+.dockerignore
+README.md
+
+index.html
+active.html
+css/
+ style.css
+java/
+ app.js
 
 Technologies Used
 
